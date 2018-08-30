@@ -1,3 +1,4 @@
+require 'byebug'
 # compare one element to every other element
 #-----PHASE 1 WAY
 # def my_min(array)
@@ -48,16 +49,21 @@ end
 
 #Phase 2
 def largest_contiguous_subsum(array)
-  largest_sum  = array.first
-  previous_sum =  0
-  array[1..-1].each_with_index do |el, i|
-    current_sum = largest_sum + el
+  previous_sum = 0
+  current_sum = 0
+  array.each_with_index do |el, i|
 
-    if previous_sum < 0
-      largest_sum = el
-    end
+      current_sum = previous_sum + el
+      if previous_sum < 0
+        if el < previous_sum
+          current_sum = previous_sum
+        else
+          current_sum = el
+        end
+      end
 
-    previous_sum = current_sum
+        previous_sum =  current_sum
   end
-  largest_sum
+
+  current_sum
 end
