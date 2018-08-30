@@ -43,4 +43,28 @@ ol {
   font-weight: bold;
 }
 
+.no_outline {
+  outline: none;
+}
 
+.no_pointer {
+  cursor: pointer;
+}
+
+input:last-child {
+  background-color: gold;
+}
+
+input:last-child:hover {
+  background-color:	goldenrod;
+}
+
+ol li:nth-child(odd) {
+  background-color: #d3d3d3;
+}
+
+h2 + .user_review:first-child {
+  border-style: solid none none none; 
+
+
+}
